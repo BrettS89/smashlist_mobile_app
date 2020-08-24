@@ -19,8 +19,6 @@ function * appLoadHandler({ payload }) {
   try {
     const existingArticles = yield select(articlesState);
     const clone = _.cloneDeep(existingArticles);
-    
-    yield AsyncStorage.setItem('token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjNhZTdiYTE5NjIwN2IzZmQxYWQyZWMiLCJpYXQiOjE1OTc2OTU5MzB9.sUkc8xuho60ODQZYRdx48GVr7Sv4ZxKrNVAqmqoVAgA');
     try {
       const { user, token } = yield call(api.isLoggedIn);
       const { favorites } = yield call(api.getFavorites);

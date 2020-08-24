@@ -4,7 +4,7 @@ import errorThrower from '../utils/errorThrower';
 
 async function getToken() {
   const token = await AsyncStorage.getItem('token');
-  if (!token) throw new Error('no token');
+  // if (!token) throw new Error('no token');
   return token;
 }
 
@@ -49,9 +49,6 @@ export async function login(body) {
 export async function getArticles(offset) {
   const res = await fetch(`${URI}/articles/${offset}`, {
     method: 'get',
-    headers: {
-      authorization: await getToken(),
-    },
   });
   const response = await res.json();
   errorThrower(res, response);

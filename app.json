@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "mobile_app",
+    "name": "SmashList",
     "slug": "mobile_app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/SmashListIcon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/SmashListSplash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -17,7 +17,12 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.smashlist.smashlist",
+      "splash": {
+        "image": "./assets/SmashListSplash.png",
+        "resizeMode": "cover"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"

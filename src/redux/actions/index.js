@@ -1,4 +1,6 @@
 export const APP_LOAD = 'APP_LOAD';
+export const SHOW_LOGIN_MODAL = 'SHOW_LOGIN_MODAL';
+
 export const GET_ARTICLES = 'GET_ARTICLES';
 export const SET_ARTICLES = 'SET_ARTICLES';
 export const SET_ARTICLE_ID = 'SET_ARTICLE_ID';
@@ -7,4 +9,5 @@ export const SET_USER_DATA = 'SET_USER_DATA';
 
 export const CREATE_FAVORITE = 'CREATE_FAVORITE';
 export const SET_FAVORITES = 'SET_FAVORITE';
+export const GET_FAVORITES = 'GET_FAVORITES';
 export const SET_NAVIGAGED_FROM_FAVORITES = 'SET_NAVIGAGED_FROM_FAVORITES';

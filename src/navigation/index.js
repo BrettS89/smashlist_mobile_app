@@ -19,6 +19,7 @@ import Auth from '../components/auth';
 import Articles from '../components/articles';
 import Article from '../components/article';
 import Favorites from '../components/favorites';
+import Account from '../components/account';
 
 const mainNav = createBottomTabNavigator({
   Articles: {
@@ -93,7 +94,7 @@ const mainNav = createBottomTabNavigator({
   // },
   
   Account: {
-    screen: Articles,
+    screen: Account,
     navigationOptions: {
       title: 'Account',
       activeTintColor: colors.main,

@@ -8,10 +8,15 @@ import { favoritesState } from '../selectors';
 
 export default [
   createFavoriteWatcher,
+  getFavoritesWatcher,
 ];
 
 function * createFavoriteWatcher() {
   yield takeLatest(actions.CREATE_FAVORITE, createFavoriteHandler);
+}
+
+function * getFavoritesWatcher() {
+  yield takeLatest(actions.GET_FAVORITES, getFavoritesHandler);
 }
 
 function * createFavoriteHandler({ payload }) {
@@ -22,5 +27,14 @@ function * createFavoriteHandler({ payload }) {
     yield put({ type: actions.SET_FAVORITES, payload: [favorite, ...favoritesClone] });
   } catch(e) {
     console.log('createFavorite error:', e.message);
+  }
+}
+
+function * getFavoritesHandler() {
+  try {
+    const { favorites } = yield call(api.getFavorites);
+    yield put({ type: actions.SET_FAVORITES, payload: favorites });
+  } catch(e) {
+    console.log('getFavorites error:', e.message);
   }
 }

@@ -3,6 +3,7 @@ import { ScrollView, View, Image, SafeAreaView } from 'react-native';
 import styles from './styles';
 import Header from './components/header';
 import ArticleSection from './components/section';
+import LoginModal from '../../shared/components/LoginModal';
 
 const ArticleView = ({ article, addToFavorites }) => {
   function renderArticle() {
@@ -31,6 +32,7 @@ const ArticleView = ({ article, addToFavorites }) => {
         <Image source={{ uri: article.photo }} style={styles.photo} resizeMode="cover" />
         {renderArticle()}
       </ScrollView>
+      <LoginModal screen={false} callback={addToFavorites} />
     </View>
   );
 };

@@ -3,6 +3,7 @@ import { View, SafeAreaView, Text, FlatList } from 'react-native';
 import styles from './styles';
 import Button from '../../shared/components/Button';
 import FavoriteCard from './components/favoriteCard';
+import LoginModal from '../../shared/components/LoginModal';
 
 const FavoritesView = ({ isLoggedIn, favorites, pressLogin, navigateToArticle }) => {
   const notLoggedIn = (
@@ -12,7 +13,9 @@ const FavoritesView = ({ isLoggedIn, favorites, pressLogin, navigateToArticle })
       </Text>
       <Button
         text="Login or signup"
+        onPress={pressLogin}
       />
+      <LoginModal screen="Articles" />
     </View>
   );
 
